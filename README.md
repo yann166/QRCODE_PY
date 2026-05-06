@@ -153,7 +153,7 @@ qr_code/
 python qr_code.py
 ```
 
-This script simply creates a QR code containing "yann24@gmail.com" and exports it to PNG.
+This script simply creates a QR code containing "google.com" and exports it to PNG.
 
 **Code:**
 ```python
