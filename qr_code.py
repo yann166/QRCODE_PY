@@ -1,3 +1,3 @@
 import qrcode
-img = qrcode.make('mailto:yann24@gmail.com')
+img = qrcode.make('google.com')
 img.save('qrcode.png')
