@@ -12,7 +12,7 @@ class QRCodeGenerator:
     Versions: 1-40 ou auto-ajustement
     """
     
-    # Niveaux de correction d'erreur disponibles
+    
     ERROR_LEVELS = {
         'L': ERROR_CORRECT_L,  # ~7% de récupération
         'M': ERROR_CORRECT_M,  # ~15% de récupération
@@ -37,7 +37,7 @@ class QRCodeGenerator:
         self.box_size = box_size
         self.border = border
         
-        # Validation des paramètres
+        
         self._validate_inputs()
         
     def _validate_inputs(self):
@@ -139,7 +139,7 @@ if __name__ == "__main__":
     
     mode = input("Choisissez 1 ou 2: ").strip() or '1'
     
-    # ========== MODE 1: UTILISATION SIMPLE ==========
+    
     if mode == '1':
         data = input("\n Entrez le lien ou le texte pour le QR code:\n→ ")
         
@@ -181,7 +181,7 @@ if __name__ == "__main__":
         print(f"  Correction: {info['error_correction']}")
         print(f"  Données: {info['data_length']} caractères")
         
-        # Sauvegarder selon le format choisi
+        
         if format_choice == '1':
             qr.save_png('qrcode.png')
         elif format_choice == '2':
@@ -194,7 +194,7 @@ if __name__ == "__main__":
         
         print("\nGÉNÉRATEUR DE CODES QR - EXEMPLES AVANCÉS")
         
-        # -------- EXEMPLE 1: Version fixe --------
+       
         print("\n[EXEMPLE 1] QR Code Version 10 (fixe)")
         qr1 = QRCodeGenerator(
             data=link,
@@ -208,7 +208,7 @@ if __name__ == "__main__":
         print(f"  Correction d'erreur: {info1['error_correction']}")
         qr1.save_png('qrcode_v10.png')
         
-        # -------- EXEMPLE 2: Auto-ajustement genre bordure et data --------
+        
         print("\n[EXEMPLE 2] QR Code Auto-ajusté")
         qr2 = QRCodeGenerator(
             data=link,
@@ -221,14 +221,14 @@ if __name__ == "__main__":
         print(f"  Dimensions: {info2['dimensions']}")
         qr2.save_png('qrcode_auto.png')
         
-        # -------- EXEMPLE 3: Multiples formats png,svg,ascii --------
+         
         print("\n[EXEMPLE 3] Export multiples formats")
         qr3 = QRCodeGenerator(link, error_correction='H')
         qr3.save_png('qrcode.png', fill_color='black', back_color='white')
         qr3.save_svg('qrcode.svg')
         qr3.save_ascii('qrcode.txt')
         
-        # -------- EXEMPLE 4: Correction maximale du qr code avec correction H --------
+        
         print("\n[EXEMPLE 4] QR Code avec correction H (maximum)")
         qr4 = QRCodeGenerator(link, error_correction='H')
         info4 = qr4.get_info()
