@@ -122,6 +122,5 @@ MIT License
 ---
 
 ##  Auteur
-YANN @2026
 Créé par YANN © 2026
 
